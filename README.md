@@ -1,2 +1,2 @@
-# codes
-My code snippets
+# DSA CPP
+My notes for DSA in CPP
