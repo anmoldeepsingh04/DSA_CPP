@@ -1,2 +1,2 @@
-# DSA CPP
-My notes for DSA in CPP
+# my code snippets
+coding muses
