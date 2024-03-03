@@ -1,6 +1,6 @@
 // Debug the code. Take input a character, print 1, if its a 
 // capital alphabet, print 0, if its a lowercase alphabet, else print -1.
-
+//this is changed
 #include<iostream> 
 using namespace std;
 
