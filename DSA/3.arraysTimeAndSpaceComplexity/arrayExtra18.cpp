@@ -42,6 +42,6 @@ int main(){
     cout<<endl;
 
     //question2: https://leetcode.com/problems/sort-colors/
-    
+    //completed one question
     return 0;
 }
