@@ -1,5 +1,5 @@
 #include <iostream>
-
+// checking if the error still persists
 using namespace std;
 
 void modifyArr(int arr[], int size){
