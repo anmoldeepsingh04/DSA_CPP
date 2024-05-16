@@ -19,13 +19,15 @@ void dutchNatFlagTwoPointer(int arr[], int size){
 }
 
 int main(){
+
   //question1: solve the Dutch national flag problem using two pointer appraoch
-  int arr[] = {1,1,1,1,1,1,1,1,1,1};
+  int arr[] = {1,1,0,1,1,0,1,0,1,0};
   int size = sizeof(arr)/sizeof(int);
   // cout<<size<<endl;
   dutchNatFlagTwoPointer(arr, size);
   for(int i = 0; i < size; i++){
     cout<<arr[i]<<" ";
   }
+  cout<<endl;
   return 0;
 }

@@ -82,7 +82,7 @@ void shiftArrK(int arr[], int size, int k){
     arr[i] = arr[i - k];
   }
   for(int j = 0; j < k; j++){
-    arr[j] = temp[j];
+    arr[j] = temp[k-j-1];
   }
 }
 
@@ -117,6 +117,15 @@ void dutchNatFlag(int arr[], int size){
     else if(j < zeros+ones) arr[j] = 1;
     else arr[j] = 2;
   }
+}
+
+void printArr(int a[], int size){
+  // passed by reference by-default, so changes made in a[0] are reflected in the actual array
+  a[0] += 100;
+  for(int i = 0; i < size; i++){
+    cout<<a[i]<<" ";
+  }
+  cout<<endl;
 }
 
 int main(){
@@ -169,14 +178,15 @@ int main(){
   // }
   
 //questions7: shift array element by k
-  // int size = 6;
+  // int size = 8;
   // int k = 2;
-  // int arr[] = {10, 20, 30, 40, 50, 60};
+  // int arr[] = {10, 20, 30, 40, 50, 60, 70, 80};
   // shiftArrK(arr, size, k);
   // // shiftArr(arr, size);
   // for(int i = 0; i < size; i++){
-  //   cout<<arr[i]<<endl;
+  //   cout<<arr[i]<<" ";
   // }
+  // cout<<endl;
   
   //questions8: solve triplet sum problem
   // Given an array arr[] of size n and an integer X. Find if there’s 
@@ -193,12 +203,18 @@ int main(){
   // Given an array A[] consisting of only 0s, 1s, and 2s. The task is to 
   // write a function that sorts the given array. The functions should put 
   // all 0s first, then all 1s and all 2s in last.
-  int size = 6;
-  int arr[] = {0, 1, 2, 0, 1, 2};
-  dutchNatFlag(arr, size);
-  for(int k = 0; k < size; k++){
-    cout<<arr[k]<<" ";
-  }
+  // int size = 6;
+  // int arr[] = {0, 1, 2, 0, 1, 2};
+  // dutchNatFlag(arr, size);
+  // for(int k = 0; k < size; k++){
+  //   cout<<arr[k]<<" ";
+  // }
+  
+  // array is by-default passed by reference
+  int size = 5;
+  int arr[] = {0,1,2,3,4};
+  printArr(arr, size);
+  cout<<"Changed element "<<arr[0]<<endl;
   
   return 0;
 }
