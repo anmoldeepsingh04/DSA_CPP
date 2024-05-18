@@ -22,7 +22,7 @@ int main() {
 // methods of array creation
   // 1. static array: Static arrays are allocated on the stack or as global variables, and their size must be known at compile time. They have a fixed size determined by their declaration.
   // int arr[5]; // array of size 5
-  // 2. dynamic array old: size is not fixed butdepends on the user input
+  // 2. dynamic array old: size is not fixed but depends on the user input
   // int n; 
   // cin>>n;
   // int arr[n]; // this is a bad method as the array size can not be changed once the array has been created, plus it runs the risk of invalid input
