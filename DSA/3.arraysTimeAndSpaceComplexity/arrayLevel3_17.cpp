@@ -6,7 +6,7 @@ using namespace std;
 // two dimensional arrays
 
 void printArrayRows(int arr[][3], int rows, int cols){
-  //doesn't work is arr[][] is passed, need to pass arr[][col_num]
+  //doesn't work if arr[][] is passed, need to pass arr[][col_num]
   for(int i = 0; i < rows; i++){
     for(int j = 0; j < cols; j++){
       cout<<arr[i][j]<<" ";
@@ -16,7 +16,7 @@ void printArrayRows(int arr[][3], int rows, int cols){
 }
 
 void printArrayCols(int arr[][3], int rows, int cols){
-  //doesn't work is arr[][] is passed, need to pass arr[][col_num]
+  //doesn't work if arr[][] is passed, need to pass arr[][col_num]
   for(int i = 0; i < cols; i++){
     for(int j = 0; j < rows; j++){
       cout<<arr[j][i]<<" ";
