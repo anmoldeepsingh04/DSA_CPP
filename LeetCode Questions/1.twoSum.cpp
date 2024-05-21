@@ -1,3 +1,8 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
 // https://leetcode.com/problems/two-sum/description/
 // Solution 1:
 
@@ -16,3 +21,8 @@ vector<int> twoSum(vector<int>& nums, int target) {
     }
     return ans;
 }
+
+int main(){
+
+}
+

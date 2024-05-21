@@ -1,3 +1,8 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
 // https://leetcode.com/problems/running-sum-of-1d-array/
 // Solution 1:
 vector<int> runningSum(vector<int>& nums) {
@@ -9,3 +14,7 @@ vector<int> runningSum(vector<int>& nums) {
         }
     return runningSums;
     }
+
+int main(){
+    
+}

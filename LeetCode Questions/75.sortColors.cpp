@@ -1,3 +1,8 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
 // https://leetcode.com/problems/sort-colors/description/
 // Solution 1:
     void sortColors(vector<int>& nums) {
@@ -30,3 +35,7 @@
             else nums[i] = 2;
         }
     }
+
+int main(){
+    
+}
