@@ -141,6 +141,22 @@ int binarySearchMissingElement(int arr[], int n){
     return ans+1;
 }
 
+int peakIndexInMountainArray(vector<int>& arr) {
+        int n = arr.size();
+        int s = 0, e = n-1, mid = s + (e-s)/2;
+        while(s < e){
+            if(arr[mid] < arr[mid+1]){
+                // on line A, so go right
+                s = mid + 1;
+            }
+            else{
+                e = mid;
+            }
+            mid = s + (e-s)/2;
+        }
+    return e;
+    }
+
 int main(){
     
     // int arr[] = {10, 20, 30, 40, 50, 60, 70, 80, 90};
@@ -177,10 +193,18 @@ int main(){
     // if(ansIndex == -1) cout<<"Element not found. "<<endl;
     // else cout<<"Element occured for: "<<ansIndex<<" times."<<endl;
 
-// question4: find a missing element in a sorted array
-    int arr[]= {1, 2, 3, 4, 5, 6, 7, 8};
-    int n = 8;
-    int ans = binarySearchMissingElement(arr, n);
-    cout<<"The missing element is: "<<ans<<endl;
+// // question4: find a missing element in a sorted array
+//     int arr[]= {1, 2, 3, 4, 5, 6, 7, 8};
+//     int n = 8;
+//     int ans = binarySearchMissingElement(arr, n);
+//     cout<<"The missing element is: "<<ans<<endl;
+
+// question4: find peak element in mountain array
+// https://leetcode.com/problems/peak-index-in-a-mountain-array/submissions/1264342998/
+// solution
+    vector<int> arr= {10, 20, 30, 40, 60, 50};
+    int ans = peakIndexInMountainArray(arr);
+    cout<<"The peak element is: "<<arr[ans]<<endl;
+
     return 0;
 }
