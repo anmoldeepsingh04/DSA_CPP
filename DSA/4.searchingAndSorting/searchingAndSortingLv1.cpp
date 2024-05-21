@@ -83,6 +83,64 @@ int binarySearchFirstOccurence2(int arr[], int n, int target){
     return ans;
 }
 
+int binarySearchLastOccurence(int arr[], int n, int target){
+    int s = 0;
+    int e = n-1;
+    int mid = (s+e)/2;
+    int ans = -1;
+    while(s<=e){
+        if(arr[mid] == target){
+            ans = mid;
+            s = mid+1;
+        }
+        else if(target > arr[mid]){
+            s = mid+1;
+        }
+        else if(target < arr[mid]){
+            e = mid-1;
+        }
+        mid = (s+e)/2;
+    }
+    return ans;
+}
+
+int binarySearchTotalOccurence(int arr[], int n, int target){
+    int start = binarySearchFirstOccurence2(arr, n, target);
+    int end = binarySearchLastOccurence(arr, n, target);
+    if(start == -1 or end == -1){
+        return -1;
+    }
+    else{
+        return end - start + 1;
+    }
+}
+
+int binarySearchMissingElement(int arr[], int n){
+    int s = 0;
+    int e = n-1;
+    int mid = s + (e-s)/2;
+    int ans = -1;
+    while(s<=e){
+        int diff = arr[mid] - mid;
+        if(diff == 1){
+            // go to right
+            s = mid+1;
+        }
+        else{
+            // ans store
+            ans = mid;
+            // go to left
+            e = mid-1;
+        }
+        mid = s + (e-s)/2;
+    }
+    // HW: find what should be changed so that the following extra condition can be removed
+    if(ans + 1 == 0){
+        return n+1;
+    }
+    return ans+1;
+}
+
 int main(){
     
     // int arr[] = {10, 20, 30, 40, 50, 60, 70, 80, 90};
@@ -94,14 +152,35 @@ int main(){
     // if(ansIndex == -1) cout<<"Element not found. "<<endl;
     // else cout<<"Element found at index: "<<ansIndex<<endl;
 
-    // question: find the first occurence of a number in a sorted array
-    int arr[]= {10, 20, 30, 30, 30, 30, 30, 30};
-    int target = 30;
-    int n = 8;
-    // int ansIndex = binarySearchFirstOccurence1(arr, n, target);
-    int ansIndex = binarySearchFirstOccurence2(arr, n, target);
-    if(ansIndex == -1) cout<<"Element not found. "<<endl;
-    else cout<<"Element found at index: "<<ansIndex<<endl;
+    // // question1: find the first occurence of a number in a sorted array
+    // int arr[]= {10, 20, 30, 30, 30, 30, 30, 30};
+    // int target = 30;
+    // int n = 8;
+    // // int ansIndex = binarySearchFirstOccurence1(arr, n, target);
+    // int ansIndex = binarySearchFirstOccurence2(arr, n, target);
+    // if(ansIndex == -1) cout<<"Element not found. "<<endl;
+    // else cout<<"Element found at index: "<<ansIndex<<endl;
 
+    // question2: find the last occurence of a number in a sorted array
+    // int arr[]= {10, 20, 30, 30, 30, 30, 40, 50};
+    // int target = 30;
+    // int n = 8;
+    // int ansIndex = binarySearchLastOccurence(arr, n, target);
+    // if(ansIndex == -1) cout<<"Element not found. "<<endl;
+    // else cout<<"Element found at index: "<<ansIndex<<endl;
+
+    // // question3: find the total occurences of a number in a sorted array
+    // int arr[]= {10, 10, 10, 20, 20, 20, 20, 30};
+    // int target = 30;
+    // int n = 8;
+    // int ansIndex = binarySearchTotalOccurence(arr, n, target);
+    // if(ansIndex == -1) cout<<"Element not found. "<<endl;
+    // else cout<<"Element occured for: "<<ansIndex<<" times."<<endl;
+
+// question4: find a missing element in a sorted array
+    int arr[]= {1, 2, 3, 4, 5, 6, 7, 8};
+    int n = 8;
+    int ans = binarySearchMissingElement(arr, n);
+    cout<<"The missing element is: "<<ans<<endl;
     return 0;
 }
