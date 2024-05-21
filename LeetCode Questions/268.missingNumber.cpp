@@ -15,7 +15,7 @@ int missingNumber(vector<int>& nums) {
         int ans = realSum - actualSum;
         return ans;
     }
-
+ 
 
 int main(){
 
