@@ -2,7 +2,7 @@
 #include <vector>
 
 using namespace std;
-
+ 
 //https://leetcode.com/problems/row-with-maximum-ones/description/
 // Solution 1:
 
