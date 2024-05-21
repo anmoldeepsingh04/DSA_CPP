@@ -15,7 +15,7 @@ void rotate(vector<int>& nums, int k) {
     }
     nums = ans;
     }
-
+ 
 int main(){
 
 }
