@@ -19,7 +19,7 @@ using namespace std;
             else nums[i] = 2;
         }
     }
-
+ 
 // Solution 2:
     void sortColors(vector<int>& nums) {
         // using two-pointer approach
